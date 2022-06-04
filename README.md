@@ -21,3 +21,6 @@ A => a
 B => b  
 
 ## Como Executar:
+1. Adicione o arquivo para leitura dentro da pasta "arquivos".
+    - Importante lembrar que o conteúdo do arquivo deve seguir a notação informada anteriormente.
+2. Execute o arquivo "main.py", localizado na raiz desse projeto.
