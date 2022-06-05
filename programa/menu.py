@@ -1,14 +1,15 @@
+from programa.algoritmo.cyk import cyk, lerArquivo
+
 def menu():
     print("-Escolha uma das opções no menu-")
-    escolha = int(input("1-Ler arquivo de texto\n2-Verificar palavra\n3-Finalizar execução\n"))
+    escolha = int(input("1-Verificar palavra\n2-Finalizar execução\n"))
 
     if(escolha == 1):
-        print("lendo arquivo")
+        lerArquivo()
 
-    elif(escolha == 2):
-        palavra = int(input("Informe a palavra:\n"))
+    # elif(escolha == 2):
+    #     palavra = int(input("Informe a palavra:\n"))
 
     else:
         print("finalizando execução")
 
-from algoritmo.cyk import cyk
