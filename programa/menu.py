@@ -1,4 +1,4 @@
-from programa.algoritmo.cyk import cyk, lerArquivo
+from programa.algoritmo.leitura import *
 
 def menu():
     print("-Escolha uma das opções no menu-")

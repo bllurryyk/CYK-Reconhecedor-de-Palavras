@@ -1,4 +1,4 @@
-from programa.menu import menu
+from programa.menu import *
 
 if(__name__ == "__main__"):
     menu()
