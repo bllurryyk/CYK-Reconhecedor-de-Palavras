@@ -8,6 +8,7 @@ def cyk(gramatica, s_terminais, s_variaveis, s_inicial, c_regras):
     # Leitura da palavra
     palavra = str(input("Informe a palavra que deseja testar: "))
     m = len(c_regras)
+    v = len(s_variaveis)
 
     # Criando matriz/tabela
     n = len(palavra)
@@ -30,43 +31,54 @@ def cyk(gramatica, s_terminais, s_variaveis, s_inicial, c_regras):
     print(tabela)
 
     # Segundo loop
-    contk = 1
     for i in range(2, n+1):
-        print("i:", i)
+        print("linha: ", i)
         for j in range(n-i+1):
-            print("j: ", j)
+            cont = 1
+            print("j:", j)
             for k in range(i-1):
-                print("k: ", k)
+                print("idice k: ", cont)
+                # tabela para comparação
                 templist = ['']
-                if(tabela[contk][j] != "-"):
-                    templist[0] += tabela[contk][j]
-                if(tabela[i-contk][j+contk] != "-"):
-                    templist[0] += tabela[i-contk][j+contk]
+                # Garantindo que ele não irá armazenar algo além da regra
+                if(tabela[cont][j] != "-"):
+                    templist[0] += tabela[cont][j]
+                if(tabela[i-cont][j+cont] != "-"):
+                    templist[0] += tabela[i-cont][j+cont]
                 print(templist)
-                lowTemplist = [each_string.lower() for each_string in templist]
-                print(lowTemplist)
+                # lowTemplist = [each_string.lower() for each_string in templist]
+                # print(lowTemplist)
+                # Passando por cada regra e vendo se bate com a nossa lista temporaria
                 for c in range(m):
-                    print("c:", c)
-                    print("regra:", c_regras[c][1])
-                    if(templist[0] in c_regras[c][1] or lowTemplist == c_regras[c][1]):
-                        tabela[i][j] = c_regras[c][0]
+                    print("produção atual:", c_regras[c][0])
+                    print("regra atual:", c_regras[c][1])
+                    if(templist[0] == c_regras[c][1]):
+                        print("templist[0]", templist[0])
+                        if(tabela[i][j] == "-"):
+                            tabela[i][j] = c_regras[c][0]
+                            print("Adicionando: ", c_regras[c][0])
+                cont += 1
+            cont = 1
+
+                    
+                
                     
 
-    tabela[4][0] = "S"
+    # tabela[4][0] = "S"
+    
 
-    print(tabela)
 
 
     # Verificação da palavra
     if(tabela[n][0] == "S"):
         print("Palava aceita")
         div("Tabela Final")
-        ll = 0
-        for linha in tabela:
-            print(tabela[ll])
-            ll += 1
     else:
         print("Palavra rejeitada")
+    ll = 0
+    for linha in tabela:
+        print(tabela[ll])
+        ll += 1
 
 
 def div(nome):
