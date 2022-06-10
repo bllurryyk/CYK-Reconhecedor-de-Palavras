@@ -16,7 +16,7 @@ def cyk(gramatica, s_terminais, s_variaveis, s_inicial, c_regras):
     print(n)
     tabela = []
     for i in range(n + 1):
-        tabela.append([0] * n)
+        tabela.append(["-"] * n)
     # Separando a palavra dentro de uma lista
     indice = 0
     for letra in palavra:
@@ -42,14 +42,20 @@ def cyk(gramatica, s_terminais, s_variaveis, s_inicial, c_regras):
                 # add = tabela1.append(c_regras[i][0])
     print(tabela)
 
+    tabela[4][0] = "S"
 
 
     # Verificação da palavra
-    # if(tabela[n][0] == "S"):
-    #     print("Palava aceita")
+    if(tabela[n][0] == "S"):
+        print("Palava aceita")
+        div("Tabela Final")
+        ll = 0
+        for linha in tabela:
+            print(tabela[ll])
+            ll += 1
 
-    # else:
-    #     print("Palavra rejeitada")
+    else:
+        print("Palavra rejeitada")
 
 
 def div(nome):
