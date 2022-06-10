@@ -5,19 +5,26 @@ def cyk(gramatica, s_terminais, s_variaveis, s_inicial, c_regras):
     print(s_inicial)
     print(c_regras)
 
+    
+
     # Leitura da palavra
     palavra = str(input("Informe a palavra que deseja testar: "))
-    n = 0
     m = len(c_regras)
+
+    # Criando matriz/tabela
+    n = len(palavra)
+    print(n)
     tabela = []
-    tabela0 = []
+    for i in range(n + 1):
+        tabela.append([0] * 4)
     # Separando a palavra dentro de uma lista
+    indice = 0
     for letra in palavra:
-        n += 1
         print(letra)
         sep_palavra = letra
-        l = tabela0.append(sep_palavra)
-    unindo = tabela.append(tabela0)
+        tabela[0][indice] = sep_palavra
+        print("indice: ", indice)
+        indice += 1
     print(tabela)
 
     
@@ -28,13 +35,11 @@ def cyk(gramatica, s_terminais, s_variaveis, s_inicial, c_regras):
     
     # print(len((s_terminais)))
     div("Executando cyk")
-    tabela1 = []
     for j in range(n):
         for i in range(m):
             if(tabela[0][j] in c_regras[i][1]):
-                add = tabela1.append(c_regras[i][0])
-
-    unindo = tabela.append(tabela1)
+                tabela[1][j] = c_regras[i][0]
+                # add = tabela1.append(c_regras[i][0])
     print(tabela)
 
 
