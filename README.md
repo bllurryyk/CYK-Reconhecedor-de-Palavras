@@ -24,3 +24,6 @@ B => b
 1. Adicione o arquivo para leitura dentro da pasta "arquivos".
     - Importante lembrar que o conteúdo do arquivo deve seguir a notação informada anteriormente.
 2. Execute o arquivo "main.py", localizado na raiz desse projeto.
+3. Escolha a opção número 1 para informar uma palavra.
+4. Informe a palavra desejada.    
+> Pronto, o programa irá informar se ela é aceita, além de também imprimir a tabela feita para verificar a aceitação.
