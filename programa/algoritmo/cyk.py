@@ -16,7 +16,7 @@ def cyk(gramatica, s_terminais, s_variaveis, s_inicial, c_regras):
     print(n)
     tabela = []
     for i in range(n + 1):
-        tabela.append([0] * 4)
+        tabela.append([0] * n)
     # Separando a palavra dentro de uma lista
     indice = 0
     for letra in palavra:
