@@ -21,7 +21,7 @@ A => a
 B => b  
 
 ## Como Executar:
-1. Adicione o arquivo para leitura dentro da pasta "arquivos".
+1. Edite o arquivo "gramatica.txt" localizado dentro da pasta "arquivos" com a gramática desejada.
     - Importante lembrar que o conteúdo do arquivo deve seguir a notação informada anteriormente.
 2. Execute o arquivo "main.py", localizado na raiz desse projeto.
 3. Escolha a opção número 1 para informar uma palavra.
